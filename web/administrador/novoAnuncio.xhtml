@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form id="barraDeFerramentas" enctype="multipart/form-data">
+            <p:growl id="messages"/>
+            <p:menubar>
+                <p:menuitem>
+                    <p:graphicImage cache="false" style="" url="../midias/imagem.png" width="100px" height="60px"/> 
+                </p:menuitem>
+
+                <p:menuitem value="Home" url="http://localhost:8084/Imobiliaria/" style="margin-top: 15px;font-size: 20px; margin-left: 40px"/>
+
+                <p:menuitem value="Imóveis" url="http://localhost:8084/Imobiliaria/imoveis/imoveis.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px"/>
+
+                <p:menuitem value="Sobre nós" url="http://localhost:8084/Imobiliaria/sobre/sobrenos.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <p:menuitem value="Contato" url="http://localhost:8084/Imobiliaria/contato/contato.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <f:facet name="options">
+                    <h:outputLink value="http://localhost:8084/Imobiliaria/administrador/loginAdm.xhtml" title="Login">
+                        <h:outputLabel/>
+                        <p:commandButton type="button" value="Login" icon="ui-icon-locked" style="height: 35px; width: 75px" />
+                    </h:outputLink>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+
+        <h:form id="form" style="margin-top: 12px"  enctype="multipart/form-data">
+            <p:growl id="growl" showDetail="true" sticky="true" /> 
+            <div align="center">
+                <p:panel header="Cadastrar Anuncio" style="margin-bottom:1px;">
+                    <p:panelGrid columns="2">
+
+                        <p:outputLabel for="cidade" value="Cidade:"/>
+                        <p:inputText id="cidade" value="#{inserirAnuncio.anuncio.cidade}" />
+
+                        <p:outputLabel for="estado" value="Estado:" />
+                        <p:inputText id="estado" value="#{inserirAnuncio.anuncio.estado}" />
+
+                        <p:outputLabel for="bairro" value="Bairro:" />
+                        <p:inputText id="bairro" value="#{inserirAnuncio.anuncio.bairro}" />
+
+                        <p:outputLabel for="numbanheiros" value="Banheiros:"/>
+                        <p:inputText id="numbanheiros" value="#{inserirAnuncio.anuncio.numbanheiros}" />
+
+                        <p:outputLabel for="numquartos" value="Quartos:"/>
+                        <p:inputText id="numquartos" value="#{inserirAnuncio.anuncio.numquartos}" />
+
+                        <p:outputLabel for="numsuites" value="Suites:"/>
+                        <p:inputText id="numsuites" value="#{inserirAnuncio.anuncio.numsuites}" />
+
+                        <p:outputLabel for="areaterreno" value="Área do terreno:"/>
+                        <p:inputText id="areaterreno" value="#{inserirAnuncio.anuncio.areaterreno}" />
+
+                        <p:outputLabel for="vagasgaragem" value="Vagas de garagem:"/>
+                        <p:inputText id="vagasgaragem" value="#{inserirAnuncio.anuncio.vagasgaragem}" />
+
+                        <p:outputLabel for="preco" value="Preço:"/>
+                        <p:inputText id="preco" value="#{inserirAnuncio.anuncio.preco}" />
+                                                
+                        <p:outputLabel for="preco" value="Foto:"/>
+                        <p:fileUpload fileLimit="1" fileLimitMessage="Excedido Limite de arquivos"
+                                      cancelLabel="Cancelar" label="Arquivo" 
+                                      value="#{inserirAnuncio.uploadedFile}"
+                                      invalidFileMessage="Somente arquivos .jpg, .png ou .gif"
+                                      allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                                      mode="simple" />
+
+                        <p:commandButton  value="Enviar" icon="ui-icon-star" 
+                                          actionListener="#{inserirAnuncio.novoAnuncio}" ajax="false">
+                        </p:commandButton>
+
+                    </p:panelGrid>
+                </p:panel>
+            </div>
+        </h:form>
+    </h:body>
+</html>

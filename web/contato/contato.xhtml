@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="./css/skin.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <title>Título</title>
+    </h:head>
+    <h:body>
+        <h:form id="barraDeFerramentas">
+            <p:growl id="messages"/>
+            <p:menubar>
+                <p:menuitem>
+                    <p:graphicImage cache="false" style="" url="../midias/imagem.png" width="100px" height="60px"/> 
+                </p:menuitem>
+
+                <p:menuitem value="Home" url="http://localhost:8084/Imobiliaria/" style="margin-top: 15px;font-size: 20px; margin-left: 40px"/>
+
+                <p:menuitem value="Imóveis" url="http://localhost:8084/Imobiliaria/imoveis/imoveis.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px"/>
+
+                <p:menuitem value="Sobre nós" url="http://localhost:8084/Imobiliaria/sobre/sobrenos.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <p:menuitem value="Contato" url="http://localhost:8084/Imobiliaria/contato/contato.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <f:facet name="options">
+                    <h:outputLink value="http://localhost:8084/Imobiliaria/administrador/loginAdm.xhtml" title="Login">
+                        <h:outputLabel/>
+                        <p:commandButton type="button" value="Login" icon="ui-icon-locked" style="height: 35px; width: 75px" />
+                    </h:outputLink>
+                </f:facet>              
+
+            </p:menubar>
+            
+            <div align="center">
+                
+                <p> </p>
+                
+                <p:panelGrid columns="2">
+
+                    <p:outputLabel for="nome" value="Nome:"/>
+                    <p:inputText id="nome" value="" />
+
+                    <p:outputLabel for="email" value="Email:" />
+                    <p:inputText id="email" value="" />
+
+                    <p:outputLabel for="telefone" value="Telefone:" />
+                    <p:inputText id="telefone" value="" />
+
+                    <p:outputLabel for="mensagem" value="Mensagem:" />
+                    <p:inputTextarea id="mensagem" value="" />
+
+                    <p:commandButton  value="Enviar">
+                    </p:commandButton>
+
+                </p:panelGrid>
+            </div>
+
+            <p> </p>
+                     
+            <div align="center">
+                <i class="fa fa-phone fa-2x"> (43)3323-5698</i>
+            </div>
+            
+            <p> </p>
+            
+            <div align="center">
+                <i class="fa fa-whatsapp fa-2x"> (18)99608-7063</i>
+            </div>
+            
+            <p> </p>
+            
+            <div align="center">
+                <i class="fa fa-at fa-2x"> botelhosimoveis@gmail.com</i>
+            </div>
+
+
+        </h:form>
+
+
+
+    </h:body>
+</html>

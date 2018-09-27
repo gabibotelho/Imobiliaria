@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    </h:head>
+    <h:body style="font-family:Arial,Helvetica,sans-serif;">
+        <h:form id="barraDeFerramentas">
+            <p:growl id="messages"/>
+            <p:menubar>
+                <p:menuitem>
+                    <p:graphicImage cache="false" style="" url="../midias/imagem.png" width="100px" height="60px"/> 
+                </p:menuitem>
+
+                <p:menuitem value="Home" url="http://localhost:8084/Imobiliaria/" style="margin-top: 15px;font-size: 20px; margin-left: 40px"/>
+
+                <p:menuitem value="Imóveis" url="http://localhost:8084/Imobiliaria/imoveis/imoveis.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px"/>
+
+                <p:menuitem value="Sobre nós" url="http://localhost:8084/Imobiliaria/sobre/sobrenos.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <p:menuitem value="Contato" url="http://localhost:8084/Imobiliaria/contato/contato.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <f:facet name="options">
+                    <h:outputLink value="http://localhost:8084/Imobiliaria/administrador/loginAdm.xhtml" title="Login">
+                        <h:outputLabel/>
+                        <p:commandButton type="button" value="Login" icon="ui-icon-locked" style="height: 35px; width: 75px" />
+                    </h:outputLink>
+                </f:facet>
+            </p:menubar>
+            <p:growl id="growl" showDetail="true" sticky="true" />
+        </h:form>
+        <h:form style="margin-top: 150px">
+            <div align="center">
+                <p:panelGrid columns="2">
+
+                    <p:outputLabel for="login" value="Login:" />
+                    <p:inputText id="login" value="#{loginAdm.adm.login}" required="true" requiredMessage="Nome obrigatório" />
+
+                    <p:outputLabel for="senha" value="Senha:" />
+                    <p:password id="senha" value="#{loginAdm.adm.senha}" required="true" requiredMessage="Senha obrigatória" />
+
+                    <p:commandButton value="Entrar" icon="ui-icon-left" ajax="false"
+                                 action="#{loginAdm.autenticar()}" update="growl" >
+                    </p:commandButton>
+
+                </p:panelGrid>
+
+            </div>
+        </h:form>
+    </h:body>
+</html>

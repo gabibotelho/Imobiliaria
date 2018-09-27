@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="./css/skin.css"/>
+        <title>Título</title>
+    </h:head>
+    <h:body>
+        <h:form id="barraDeFerramentas">
+            <p:growl id="messages"/>
+            <p:menubar>
+                <p:menuitem>
+                    <p:graphicImage cache="false" style="" url="../midias/imagem.png" width="100px" height="60px"/> 
+                </p:menuitem>
+
+                <p:menuitem value="Home" url="http://localhost:8084/Imobiliaria/" style="margin-top: 15px;font-size: 20px; margin-left: 40px"/>
+
+                <p:menuitem value="Imóveis" url="http://localhost:8084/Imobiliaria/imoveis/imoveis.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px"/>
+
+
+                <p:menuitem value="Sobre nós" url="http://localhost:8084/Imobiliaria/sobre/sobrenos.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <p:menuitem value="Contato" url="http://localhost:8084/Imobiliaria/contato/contato.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <f:facet name="options">
+                    <h:outputLink value="http://localhost:8084/Imobiliaria/administrador/loginAdm.xhtml" title="Login">
+                        <h:outputLabel/>
+                        <p:commandButton type="button" value="Login" icon="ui-icon-locked" style="height: 35px; width: 75px" />
+                    </h:outputLink>
+                </f:facet>
+            </p:menubar> 
+        </h:form>
+        
+        <h:form> 
+            <p:dataScroller value="#{dataScrollerView.anuncios}" var="anuncio" chunkSize="10">
+                <br> </br>
+
+
+                <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+                    <p:graphicImage width="150px"  url="/anuncio/imagens/#{anuncio.imagem}" /> 
+                    <p:outputPanel>
+                        <h:panelGrid columns="4" cellpadding="5" style="border-bottom: 1px solid #A8A8A8; margin-bottom: 22px;">
+                            <h:outputText value="Cidade:" />
+                            <h:outputText value="#{anuncio.cidade}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Estado:" />
+                            <h:outputText value="#{anuncio.estado}" style="font-weight: bold"/>
+
+                            <h:outputText value="Bairro:" />
+                            <h:outputText value="#{anuncio.bairro}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Banheiros:" />
+                            <h:outputText value="#{anuncio.numbanheiros}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Quartos:" />
+                            <h:outputText value="#{anuncio.numquartos}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Suítes:" />
+                            <h:outputText value="#{anuncio.numsuites}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Área do terreno:" />
+                            <h:outputText value="#{anuncio.areaterreno}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Vagas de garagem:" />
+                            <h:outputText value="#{anuncio.vagasgaragem}" style="font-weight: bold"/>
+                            
+                            <h:outputText value="Preço:" />
+                            <h:outputText value="#{anuncio.preco}" style="font-weight: bold"/>
+                        </h:panelGrid>
+                    </p:outputPanel>
+                </h:panelGrid>
+            </p:dataScroller>
+        </h:form>
+        
+        
+        
+    </h:body>
+</html>

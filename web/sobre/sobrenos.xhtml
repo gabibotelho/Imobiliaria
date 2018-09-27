@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="./css/skin.css"/>
+        <title>Título</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="barraDeFerramentas">
+            <p:growl id="messages"/>
+            <p:menubar>
+                <p:menuitem>
+                    <p:graphicImage cache="false" style="" url="../midias/imagem.png" width="100px" height="60px"/> 
+                </p:menuitem>
+
+                <p:menuitem value="Home" url="http://localhost:8084/Imobiliaria/" style="margin-top: 15px;font-size: 20px; margin-left: 40px"/>
+
+                <p:menuitem value="Imóveis" url="http://localhost:8084/Imobiliaria/imoveis/imoveis.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px"/>
+
+                <p:menuitem value="Sobre nós" url="http://localhost:8084/Imobiliaria/sobre/sobrenos.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <p:menuitem value="Contato" url="http://localhost:8084/Imobiliaria/contato/contato.xhtml" style="margin-top: 15px;font-size: 20px; margin-left: 15px" />
+
+                <f:facet name="options">
+                    <h:outputLink value="http://localhost:8084/Imobiliaria/administrador/loginAdm.xhtml" title="Login">
+                        <h:outputLabel/>
+                        <p:commandButton type="button" value="Login" icon="ui-icon-locked" style="height: 35px; width: 75px" />
+                    </h:outputLink>
+                </f:facet>
+            </p:menubar>
+
+            
+
+            <div align="center">
+                <div>
+                    <br></br>
+                    <p:galleria value="#{imobiFoto.imagens}" var="image" panelWidth="500" panelHeight="313">
+                        <p:graphicImage value="fotos/#{image}" alt="Image Description for #{image}" title="#{image}"/>
+                    </p:galleria>
+                </div>
+                <div>
+                    <p> A Botelho's Imóveis foi fundada em outubro do ano de 1999 com o objetivo de ser um diferencial no mercado imobiliário. Gabriela Botelho, diretora da empresa, tem com todo o quadro funcional, metas de trabalho baseadas na eficiência, respeito aos clientes, fornecedores e parceiros comerciais.
+
+                        Com mais de 18 anos de serviços prestados, a Botelho's Imobiliaria firmou-se como um nome sólido e confiável no mercado imobiliário, sendo hoje reconhecida como referência no momento da compra, venda e locação de imóveis na cidade de Bandeirantes-PR e região. Tem no seu escopo um modelo de gestão que busca cultivar a confiança e a transparência de negócios com os seus clientes.
+
+                        Essas são as razões pelas quais que dia após dia aumenta, cada vez mais, seu portfólio de clientes.
+                    </p>
+                </div>
+            </div>
+
+        </h:form>
+    </h:body>
+</html>
